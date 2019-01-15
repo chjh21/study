@@ -28,8 +28,8 @@ public class HttpServer {
         printer.println("HTTP/1.1 200 OK");
         printer.println("Content-Type: text/html");
         printer.println("Content-Length: " + result.length());
-        printer.println();
-        printer.println(result);
+        printer.println(); //CRLF
+        printer.println(result); 
         printer.flush();
   
         printer.close();
