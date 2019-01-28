@@ -6,7 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class HttpServer {
+public class HttpServer_1 {
 
 	public static void main(String[] args) throws IOException {
 		

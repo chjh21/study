@@ -6,7 +6,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class HttpClient {
+public class HttpClient_1 {
 
 	public static void main(String[] args) throws IOException {
 		
