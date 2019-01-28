@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class HttpRequest_3 {	private String method;
+public class HttpRequest_3 {	
+	private String method;
     private String uri;
     private String protocal;
     private String message;
