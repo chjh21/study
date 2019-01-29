@@ -8,7 +8,6 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Iterator;
-import java.util.Scanner;
 import java.util.Set;
 
 public class HttpServer_4 {
@@ -23,7 +22,6 @@ public class HttpServer_4 {
 		BufferedReader br = new BufferedReader(isr);
 		 
 		String line = null;
-		Integer contentLength = null;
 		 
 		HttpRequest_3 request = new HttpRequest_3();
 		line = br.readLine();
