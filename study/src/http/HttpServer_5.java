@@ -17,7 +17,7 @@ public class HttpServer_5 {
 		while(true) {
             Socket socket =  server.accept();
             System.out.println("요청이 들어왔습니다 " + new Date());
-            Processor_5 processor = new Processor_5(socket);
+            Processor_6 processor = new Processor_6(socket);
             executorService.execute(processor);
         }
 	}

@@ -8,10 +8,10 @@ import java.net.Socket;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Processor_5 extends Thread{
+public class Processor_6 extends Thread{
 	private Socket socket;
 	 
-    public Processor_5(Socket socket) {
+    public Processor_6(Socket socket) {
         this.socket = socket;
     }
     
@@ -47,6 +47,7 @@ public class Processor_5 extends Thread{
 		String[] params;
 		if (request.getMethod().equals("GET")) {
 			params = request.getUri().split("\\?")[1].split("&");
+			request.setUri(request.getUri().split("\\?")[0]);
 		} else {
 			params = request.getMessage().split("&");
 		}
@@ -60,10 +61,12 @@ public class Processor_5 extends Thread{
 		PrintWriter printer = new PrintWriter(socket.getOutputStream());
 
 		HttpResponse_4 response = new HttpResponse_4(request);
-		response.setResponseCode(ResponseCode_4.OK);
-		response.getHeader().put("Content-Type", "text/html");
-		response.setMessage("Success Message");
-
+		ServiceConfig_6 serviceConfig = new ServiceConfig_6();
+		String className = serviceConfig.getMappingClass(request.getUri());
+		Class clz = Class.forName(className);
+		HelloService_6 service = (HelloService_6) clz.newInstance();
+		service.doService(request, response);
+		
 		printer.print(response.getRequest().getProtocal() + " ");
 		printer.println(response.getResponseCode().getCode());
 		Set<String> headerKeySet = response.getHeader().keySet();
@@ -80,7 +83,7 @@ public class Processor_5 extends Thread{
 		isr.close();
 		is.close();
     	}catch(Exception e){
-    		System.out.println(e.getMessage()+" 아이콘은 없어..");
+    		System.out.println(e.getMessage()+" 아이콘은 처리안해..");
     	}
     }
     
