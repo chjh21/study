@@ -8,5 +8,14 @@ public class HelloService_6 implements Service_6{
         response.getHeader().put("Content-Type", "text/html");
         response.setMessage("Hello World");
 	}
-	
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void init() {
+		// TODO Auto-generated method stub
+		
+	}
 }

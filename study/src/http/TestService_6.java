@@ -8,4 +8,15 @@ public class TestService_6 implements Service_6{
         response.setMessage("Test!!");
 		
 	}
+	
+	@Override
+	public void init() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
 }
