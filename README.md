@@ -1,2 +1,2 @@
-# meta_study
+# study
 go github
